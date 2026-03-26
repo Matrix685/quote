@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -8,7 +8,17 @@
     </head>
     <body>
         <div id="bg"></div>
-        <div id="main"></div>
+        <div id="main">
+            <div id="carousel-selector">
+                <p id="0" data-active="true">Altolympus</p>
+                <p id="1" data-active="false">Miscellaneous</p>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel" id="altolympus" data-active="true"></div>
+                <div class="carousel" id="misc" data-active="false"></div>
+            </div>
+        </div>
         <div id="zoom" style="display: none; scale: 1"></div>
         <div id="zoomout"></div>
         <script src="script.js"></script>
