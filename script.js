@@ -48,7 +48,6 @@ let quotes = [
             image: "https://cdn.europosters.eu/image/1300/254049.jpg",
             quote: '"In our pursuit of greatness, we failed to do good" - Viktor',
         },
-
         {
             id: "undertale",
             image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzjmDRF7gS0Jt3XBMQ6PUm5WsVJdc1G0JBw&s",
@@ -69,11 +68,50 @@ let quotes = [
             image: "https://m.media-amazon.com/images/M/MV5BYjBlODg3ZTgtN2ViNS00MDlmLWIyMTctZmQ2NWYwMzE2N2RmXkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg",
             quote: '"There is no escape." - Hades (from Hades)',
         },
-
         {
             id: "eda",
             image: "https://d23.com/app/uploads/2021/06/1180w-600h-060921_The-Owl-House_season-two_iris.jpg",
             quote: `"Quitting! It's like trying, but easier" - Eda the Owl Lady`,
+        },
+        {
+            id: "d20temp",
+            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+            quote: '"I died!" - Gorgug Thistlespring',
+        },
+        {
+            id: "d20temp",
+            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+            quote: '"If someone is your dad, they have to tell you right?" - Gorgug Thistlespring',
+        },
+        {
+            id: "d20temp",
+            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+            quote: '"Tornado! Earthquake!" - Gorgug Thistlespring',
+        },
+        {
+            id: "d20temp",
+            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+            quote: "just fig flirting with goldenrod because its funny i cant remember specific quotes right now ill fix it i promise",
+        },
+        {
+            id: "d20temp",
+            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+            quote: `"And now comes the time as Dungeon Master where I have to decide what skill is involved with jumping up a corn goblin's butthole" - Brennan Lee Mulligan`,
+        },
+        {
+            id: "yesorno",
+            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelios-i.mashable.com%2Fimagery%2Farticles%2F00QPGsVu3R8QcxdtrRH5XNx%2Fimages-1.fill.size_2000x1125.v1702009412.jpg&f=1&nofb=1&ipt=8e3dad4639640c06cebfbcf17790b607b6122b6e95ccd1c8c9bb64b53af4e896",
+            quote: '"I am the only one out of the loop IT WOULD SEEM" - Brennan Lee Mulligan. "i killed him yeah"',
+        },
+        {
+            id: "buttholes",
+            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelios-i.mashable.com%2Fimagery%2Farticles%2F00QPGsVu3R8QcxdtrRH5XNx%2Fimages-1.fill.size_2000x1125.v1702009412.jpg&f=1&nofb=1&ipt=8e3dad4639640c06cebfbcf17790b607b6122b6e95ccd1c8c9bb64b53af4e896",
+            quote: '"Buttholes, all over the universe" - Izzy Roland',
+        },
+        {
+            id: "knight",
+            image: "https://vhx.imgix.net/chuncensoredstaging/assets/a3499e72-433c-4501-9f6c-4b5f74900a88.png?auto=format%2Ccompress&fit=crop&h=720&q=75&w=1280",
+            quote: '"My hands are sooooo stickyyy" - Jacob Wysocki. "now eat that second devilled egg". "SHITASSSSSS" "i have slain many a fowl beast. many a geese". "i was shot with a laser from space"',
         },
     ],
 ];
@@ -291,10 +329,16 @@ document.onkeydown = (e) => {
 
 // hyerplexed anime grid thing but mostly invisible, sometimes quick wipe thing
 const bg = document.getElementById("bg");
+const carouselContainer = document.getElementById("carousel-container");
+
+let carouselsHeight = Array.from(carousels);
 
 let maxWidth, maxHeight, columns, rows;
 
 function resize() {
+    carouselsHeight = carouselsHeight.sort((a, b) => b.offsetHeight - a.offsetHeight);
+    carouselContainer.style.height = carouselsHeight[0].offsetHeight + "px";
+
     bg.innerHTML = "";
     bg.style.height = Math.max(document.documentElement.offsetHeight, window.innerHeight) + "px";
 
@@ -321,7 +365,7 @@ function resize() {
 resize();
 window.onresize = resize;
 
-const carouselSelectors = document.querySelectorAll("#carousel-selector > p");
+const carouselSelectors = Array.from(document.querySelectorAll("#carousel-selector > p"));
 
 for (const selector of carouselSelectors) {
     selector.onclick = () => {
@@ -331,7 +375,7 @@ for (const selector of carouselSelectors) {
         });
 
         selector.dataset.active = "true";
-        carousels[selector.id].dataset.active = "true";
+        carousels[carouselSelectors.indexOf(selector)].dataset.active = "true";
         // console.log(selector.id);
     };
 }
