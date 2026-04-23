@@ -366,16 +366,49 @@ resize();
 window.onresize = resize;
 
 const carouselSelectors = Array.from(document.querySelectorAll("#carousel-selector > p"));
+let activeIndex = 0;
 
-for (const selector of carouselSelectors) {
+let bgOffset = 0;
+
+carouselSelectors.forEach(selectCarousel);
+
+function selectCarousel(selector, index) {
+    // if (index - activeIndex > 0) {
+    //     let toRight = true;
+    // } else {
+    //     let toRight = false;
+    // }
+
     selector.onclick = () => {
-        carouselSelectors.forEach((n) => (n.dataset.active = "false"));
-        carousels.forEach((n) => {
-            if (n.dataset.active == "true") n.dataset.active = "false";
+        let dir = Math.sign(index - activeIndex);
+
+        carouselSelectors.forEach((n) => {
+            n.dataset.active = "false";
         });
 
+        carousels.forEach((n) => {
+            if (n.dataset.active == "true") {
+                n.dataset.active = "false";
+                n.style.transform = `translateX(${100 * dir * -1}%)`;
+            }
+        });
+
+        console.log(dir);
+
+        bg.style.transform = `translateX(${bgOffset + 8 * dir * -1}%)`;
+
         selector.dataset.active = "true";
-        carousels[carouselSelectors.indexOf(selector)].dataset.active = "true";
+
+        let newCarousel = carousels[carouselSelectors.indexOf(selector)];
+
+        newCarousel.style.transition = "none";
+        newCarousel.style.transform = `translateX(${100 * dir}%)`;
+        newCarousel.dataset.active = "true";
+        newCarousel.style.transition = "transform 500ms cubic-bezier(0.05, 0.55, 0.55, 1)";
+        newCarousel.style.transform = "translateX(0%)";
+
+        activeIndex = index;
+
         // console.log(selector.id);
     };
 }
