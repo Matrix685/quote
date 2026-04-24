@@ -1,145 +1,184 @@
 const main = document.getElementById("main");
+const carouselSelector = document.getElementById("carousel-selector");
+const carouselContainer = document.getElementById("carousel-container");
 // const altolympus = document.getElementById("altolympus");
 // const misc = document.getElementById("misc");
-const carousels = document.querySelectorAll(".carousel");
 
 let quotes = [
-    [
-        {
-            id: "altolympus",
-            image: "https://www.ancientworldmagazine.com/site/assets/files/1195/rubens-phaeton-1.jpg",
-            quote: `"You can't just <i>SAY</i> perchance" - altolympus`,
-        },
-        {
-            id: "linux",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRzrZVQJhpaQeiO4NYlGTNMKc26LHTA-o-RA&s",
-            quote: '"You should install a package about that" - altolympus',
-        },
-        {
-            id: "sky",
-            image: "https://blog.gale.com/wp-content/uploads/2024/07/iStock-1693812103.jpg",
-            quote: `"What's up?" - Anon,<br />"The sky" - altolympus`,
-        },
-    ],
+    {
+        id: "Dimension 20",
+        content: [
+            {
+                id: "d20temp",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+                quote: '"I died!" - Gorgug Thistlespring',
+            },
+            {
+                id: "d20temp",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+                quote: '"If someone is your dad, they have to tell you right?" - Gorgug Thistlespring',
+            },
+            {
+                id: "d20temp",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+                quote: '"Tornado! Earthquake!" - Gorgug Thistlespring',
+            },
+            {
+                id: "d20temp",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+                quote: "just fig flirting with goldenrod because its funny i cant remember specific quotes right now ill fix it i promise",
+            },
+            {
+                id: "d20temp",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+                quote: `"And now comes the time as Dungeon Master where I have to decide what skill is involved with jumping up a corn goblin's butthole" - Brennan Lee Mulligan`,
+            },
+        ],
+    },
+    {
+        id: "Make Some Noise",
+        content: [
+            {
+                id: "knight",
+                image: "https://vhx.imgix.net/chuncensoredstaging/assets/a3499e72-433c-4501-9f6c-4b5f74900a88.png?auto=format%2Ccompress&fit=crop&h=720&q=75&w=1280",
+                quote: '"My hands are sooooo stickyyy" - Jacob Wysocki. "now eat that second devilled egg". "SHITASSSSSS" "i have slain many a fowl beast. many a geese". "i was shot with a laser from space"',
+            },
+        ],
+    },
+    {
+        id: "Altolympus",
+        content: [
+            {
+                id: "altolympus",
+                image: "https://www.ancientworldmagazine.com/site/assets/files/1195/rubens-phaeton-1.jpg",
+                quote: `"You can't just <i>SAY</i> perchance" - altolympus`,
+            },
+            {
+                id: "linux",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRzrZVQJhpaQeiO4NYlGTNMKc26LHTA-o-RA&s",
+                quote: '"You should install a package about that" - altolympus',
+            },
+            {
+                id: "sky",
+                image: "https://blog.gale.com/wp-content/uploads/2024/07/iStock-1693812103.jpg",
+                quote: `"What's up?" - Anon,<br />"The sky" - altolympus`,
+            },
+        ],
+    },
 
-    [
-        {
-            id: "spider",
-            image: "https://lh3.googleusercontent.com/proxy/mtBzXWcpqeV9IGsqzM9f4KVmPa8eukHxzdQlQxK2mPDV4vunA14hWOy1JbSw1zgFSm-QzW0GUAGLUXsNRTYyGtLeVgQpGh2bGLSRYdONBntYJhi6WL21Zq6GIK6Gufh0IL8WeU4sNIYvQ8C6B-ycto_WQA",
-            quote: '"With great power comes great responsibility" - Ben Parker',
-        },
-        {
-            id: "owl",
-            image: "https://spotlight153.com/wp-content/uploads/2022/06/62251732-0-q80-900x506.jpg",
-            quote: '"Now I am both King and Queen, best of both things" - King',
-        },
-        {
-            id: "amphibia",
-            image: "https://upload.wikimedia.org/wikipedia/en/4/45/Amphibia_Season_3_Intro_Image.jpg",
-            quote: '"Spranne against the world!"- Sprig and Anne<br />(while against the world)',
-        },
-        {
-            id: "history",
-            image: "https://i.ytimg.com/vi/xuCn8ux2gbs/maxresdefault.jpg",
-            quote: '"Those are the Tamil Kings, no one conquers the Tamil Kings" - Bill Wurtz',
-        },
-        {
-            id: "arcane",
-            image: "https://cdn.europosters.eu/image/1300/254049.jpg",
-            quote: '"In our pursuit of greatness, we failed to do good" - Viktor',
-        },
-        {
-            id: "undertale",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzjmDRF7gS0Jt3XBMQ6PUm5WsVJdc1G0JBw&s",
-            quote: `"Despite everything, it's still you" - Asgore's mirror`,
-        },
-        {
-            id: "sans",
-            image: "https://cdn.mos.cms.futurecdn.net/5nULLkfBtxNpjR5SmvmSw-1200-80.jpg",
-            quote: `"my brother has a very special attack" - sans`,
-        },
-        {
-            id: "aurora",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpTBpnkwrN-hu9sgXK1KNhVYNZAwb_qXwHOQ&s",
-            quote: '"Nobody dies. Not for me. Not ever" - Kendal',
-        },
-        {
-            id: "hades",
-            image: "https://m.media-amazon.com/images/M/MV5BYjBlODg3ZTgtN2ViNS00MDlmLWIyMTctZmQ2NWYwMzE2N2RmXkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg",
-            quote: '"There is no escape." - Hades (from Hades)',
-        },
-        {
-            id: "eda",
-            image: "https://d23.com/app/uploads/2021/06/1180w-600h-060921_The-Owl-House_season-two_iris.jpg",
-            quote: `"Quitting! It's like trying, but easier" - Eda the Owl Lady`,
-        },
-        {
-            id: "d20temp",
-            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
-            quote: '"I died!" - Gorgug Thistlespring',
-        },
-        {
-            id: "d20temp",
-            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
-            quote: '"If someone is your dad, they have to tell you right?" - Gorgug Thistlespring',
-        },
-        {
-            id: "d20temp",
-            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
-            quote: '"Tornado! Earthquake!" - Gorgug Thistlespring',
-        },
-        {
-            id: "d20temp",
-            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
-            quote: "just fig flirting with goldenrod because its funny i cant remember specific quotes right now ill fix it i promise",
-        },
-        {
-            id: "d20temp",
-            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
-            quote: `"And now comes the time as Dungeon Master where I have to decide what skill is involved with jumping up a corn goblin's butthole" - Brennan Lee Mulligan`,
-        },
-        {
-            id: "yesorno",
-            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelios-i.mashable.com%2Fimagery%2Farticles%2F00QPGsVu3R8QcxdtrRH5XNx%2Fimages-1.fill.size_2000x1125.v1702009412.jpg&f=1&nofb=1&ipt=8e3dad4639640c06cebfbcf17790b607b6122b6e95ccd1c8c9bb64b53af4e896",
-            quote: '"I am the only one out of the loop IT WOULD SEEM" - Brennan Lee Mulligan. "i killed him yeah"',
-        },
-        {
-            id: "buttholes",
-            image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelios-i.mashable.com%2Fimagery%2Farticles%2F00QPGsVu3R8QcxdtrRH5XNx%2Fimages-1.fill.size_2000x1125.v1702009412.jpg&f=1&nofb=1&ipt=8e3dad4639640c06cebfbcf17790b607b6122b6e95ccd1c8c9bb64b53af4e896",
-            quote: '"Buttholes, all over the universe" - Izzy Roland',
-        },
-        {
-            id: "knight",
-            image: "https://vhx.imgix.net/chuncensoredstaging/assets/a3499e72-433c-4501-9f6c-4b5f74900a88.png?auto=format%2Ccompress&fit=crop&h=720&q=75&w=1280",
-            quote: '"My hands are sooooo stickyyy" - Jacob Wysocki. "now eat that second devilled egg". "SHITASSSSSS" "i have slain many a fowl beast. many a geese". "i was shot with a laser from space"',
-        },
-    ],
+    {
+        id: "Miscellaneous",
+        content: [
+            {
+                id: "spider",
+                image: "https://lh3.googleusercontent.com/proxy/mtBzXWcpqeV9IGsqzM9f4KVmPa8eukHxzdQlQxK2mPDV4vunA14hWOy1JbSw1zgFSm-QzW0GUAGLUXsNRTYyGtLeVgQpGh2bGLSRYdONBntYJhi6WL21Zq6GIK6Gufh0IL8WeU4sNIYvQ8C6B-ycto_WQA",
+                quote: '"With great power comes great responsibility" - Ben Parker',
+            },
+            {
+                id: "owl",
+                image: "https://spotlight153.com/wp-content/uploads/2022/06/62251732-0-q80-900x506.jpg",
+                quote: '"Now I am both King and Queen, best of both things" - King',
+            },
+            {
+                id: "amphibia",
+                image: "https://upload.wikimedia.org/wikipedia/en/4/45/Amphibia_Season_3_Intro_Image.jpg",
+                quote: '"Spranne against the world!"- Sprig and Anne<br />(while against the world)',
+            },
+            {
+                id: "history",
+                image: "https://i.ytimg.com/vi/xuCn8ux2gbs/maxresdefault.jpg",
+                quote: '"Those are the Tamil Kings, no one conquers the Tamil Kings" - Bill Wurtz',
+            },
+            {
+                id: "arcane",
+                image: "https://cdn.europosters.eu/image/1300/254049.jpg",
+                quote: '"In our pursuit of greatness, we failed to do good" - Viktor',
+            },
+            {
+                id: "undertale",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzjmDRF7gS0Jt3XBMQ6PUm5WsVJdc1G0JBw&s",
+                quote: `"Despite everything, it's still you" - Asgore's mirror`,
+            },
+            {
+                id: "sans",
+                image: "https://cdn.mos.cms.futurecdn.net/5nULLkfBtxNpjR5SmvmSw-1200-80.jpg",
+                quote: `"my brother has a very special attack" - sans`,
+            },
+            {
+                id: "aurora",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpTBpnkwrN-hu9sgXK1KNhVYNZAwb_qXwHOQ&s",
+                quote: '"Nobody dies. Not for me. Not ever" - Kendal',
+            },
+            {
+                id: "hades",
+                image: "https://m.media-amazon.com/images/M/MV5BYjBlODg3ZTgtN2ViNS00MDlmLWIyMTctZmQ2NWYwMzE2N2RmXkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg",
+                quote: '"There is no escape." - Hades (from Hades)',
+            },
+            {
+                id: "eda",
+                image: "https://d23.com/app/uploads/2021/06/1180w-600h-060921_The-Owl-House_season-two_iris.jpg",
+                quote: `"Quitting! It's like trying, but easier" - Eda the Owl Lady`,
+            },
+
+            {
+                id: "yesorno",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelios-i.mashable.com%2Fimagery%2Farticles%2F00QPGsVu3R8QcxdtrRH5XNx%2Fimages-1.fill.size_2000x1125.v1702009412.jpg&f=1&nofb=1&ipt=8e3dad4639640c06cebfbcf17790b607b6122b6e95ccd1c8c9bb64b53af4e896",
+                quote: '"I am the only one out of the loop IT WOULD SEEM" - Brennan Lee Mulligan. "i killed him yeah"',
+            },
+            {
+                id: "buttholes",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelios-i.mashable.com%2Fimagery%2Farticles%2F00QPGsVu3R8QcxdtrRH5XNx%2Fimages-1.fill.size_2000x1125.v1702009412.jpg&f=1&nofb=1&ipt=8e3dad4639640c06cebfbcf17790b607b6122b6e95ccd1c8c9bb64b53af4e896",
+                quote: '"Buttholes, all over the universe" - Izzy Roland',
+            },
+        ],
+    },
 ];
 
 function mix(arr) {
+    // console.log("this should show up twice");
     for (let i = arr.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * i);
         [arr[i], arr[j]] = [arr[j], arr[i]];
     }
 }
 
-quotes.forEach((n) => mix(n));
+quotes.forEach((n) => mix(n.content));
 
+// for (const group of quotes) {
 quotes.forEach((group, index) => {
-    for (const quote of group) {
-        carousels[index].innerHTML += `
-        <div id=outer>
-            <div class="quote">
-                <div class="container ${quote.id}">
-                    <div class="img" style="background-image: url(${quote.image})"></div>
-                    <p class="caption">${quote.quote}</p>
-                </div>
-            </div>
-        </div>
-    `;
-    }
+    let active = index == 0;
+
+    // console.log(active);
+    // console.log(index);
+    // console.log("this should show up twice");
+
+    carouselContainer.innerHTML += `<div class="carousel" id="${group.id}" data-active="${active}"></div>`;
+
+    carouselSelector.innerHTML += `<p class="selector" data-active="${active}">${group.id}</p>`;
+    // for (const quote of group.content) {
 });
 
+// help me
+
+const carousels = document.querySelectorAll(".carousel");
+
+quotes.forEach((group, index) => {
+    // console.log("this should show up twice");
+    // group.content.forEach((quote, index) => {
+    for (const quote of group.content) {
+        console.log("this should show up more than twice");
+        carousels[index].innerHTML += `
+			<div id="outer">
+				<div class="quote">
+					<div class="container ${quote.id}">
+						<div class="img" style="background-image: url(${quote.image})"></div>
+						<p class="caption">${quote.quote}</p>
+					</div>
+				</div>
+	        </div>;
+		`;
+    }
+});
 // for (const quote of quotes[1]) {
 //     misc.innerHTML += `
 //         <div id=outer>
@@ -321,15 +360,10 @@ document.onmousedown = unzoom;
 document.onkeydown = (e) => {
     if (e.key == "Escape") unzoom();
 };
-// document.onscroll = () => {
-//     // console.log("ya done scrolled bitch");
-//     // console.log((document.documentElement.scrollTop = 0));
-
-// };
 
 // hyerplexed anime grid thing but mostly invisible, sometimes quick wipe thing
 const bg = document.getElementById("bg");
-const carouselContainer = document.getElementById("carousel-container");
+// const carouselContainer = document.getElementById("carousel-container");
 
 let carouselsHeight = Array.from(carousels);
 
@@ -366,8 +400,8 @@ resize();
 window.onresize = resize;
 
 const carouselSelectors = Array.from(document.querySelectorAll("#carousel-selector > p"));
-let activeIndex = 0;
 
+let activeIndex = 0;
 let bgOffset = 0;
 
 carouselSelectors.forEach(selectCarousel);
@@ -393,9 +427,10 @@ function selectCarousel(selector, index) {
             }
         });
 
-        console.log(dir);
+        // console.log(dir);
+        bgOffset += 300 * dir * -1;
 
-        bg.style.transform = `translateX(${bgOffset + 8 * dir * -1}%)`;
+        bg.style.transform = `translateX(${bgOffset}px)`;
 
         selector.dataset.active = "true";
 
@@ -404,7 +439,7 @@ function selectCarousel(selector, index) {
         newCarousel.style.transition = "none";
         newCarousel.style.transform = `translateX(${100 * dir}%)`;
         newCarousel.dataset.active = "true";
-        newCarousel.style.transition = "transform 500ms cubic-bezier(0.05, 0.55, 0.55, 1)";
+        newCarousel.style.transition = "transform 750ms cubic-bezier(.16,.3,.28,1.02)";
         newCarousel.style.transform = "translateX(0%)";
 
         activeIndex = index;
