@@ -65,7 +65,6 @@ let quotes = [
             },
         ],
     },
-
     {
         id: "Miscellaneous",
         content: [
@@ -166,7 +165,7 @@ quotes.forEach((group, index) => {
     // console.log("this should show up twice");
     // group.content.forEach((quote, index) => {
     for (const quote of group.content) {
-        console.log("this should show up more than twice");
+        // console.log("this should show up more than twice");
         carousels[index].innerHTML += `
 			<div id="outer">
 				<div class="quote">
@@ -179,18 +178,6 @@ quotes.forEach((group, index) => {
 		`;
     }
 });
-// for (const quote of quotes[1]) {
-//     misc.innerHTML += `
-//         <div id=outer>
-//             <div class="quote">
-//                 <div class="container ${quote.id}">
-//                     <div class="img" style="background-image: url(${quote.image})"></div>
-//                     <p class="caption">${quote.quote}</p>
-//                 </div>
-//             </div>
-//         </div>
-//     `;
-// }
 
 const outers = document.querySelectorAll("#outer");
 let timeouts = [];
@@ -363,7 +350,6 @@ document.onkeydown = (e) => {
 
 // hyerplexed anime grid thing but mostly invisible, sometimes quick wipe thing
 const bg = document.getElementById("bg");
-// const carouselContainer = document.getElementById("carousel-container");
 
 let carouselsHeight = Array.from(carousels);
 
@@ -407,12 +393,6 @@ let bgOffset = 0;
 carouselSelectors.forEach(selectCarousel);
 
 function selectCarousel(selector, index) {
-    // if (index - activeIndex > 0) {
-    //     let toRight = true;
-    // } else {
-    //     let toRight = false;
-    // }
-
     selector.onclick = () => {
         let dir = Math.sign(index - activeIndex);
 
@@ -438,9 +418,13 @@ function selectCarousel(selector, index) {
 
         newCarousel.style.transition = "none";
         newCarousel.style.transform = `translateX(${100 * dir}%)`;
-        newCarousel.dataset.active = "true";
-        newCarousel.style.transition = "transform 750ms cubic-bezier(.16,.3,.28,1.02)";
-        newCarousel.style.transform = "translateX(0%)";
+
+        setTimeout(() => {
+            // thanks for teaching me this hyperplexed!
+            newCarousel.dataset.active = "true";
+            newCarousel.style.transition = "transform 750ms cubic-bezier(.16,.3,.28,1.02)";
+            newCarousel.style.transform = "translateX(0%)";
+        }, 5);
 
         activeIndex = index;
 
