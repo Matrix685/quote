@@ -389,7 +389,7 @@ function resize() {
 resize();
 window.onresize = resize;
 
-const carouselSelectors = Array.from(document.querySelectorAll("#carousel-selector > p"));
+const carouselSelectors = Array.from(document.querySelectorAll("#carousel-selection > p"));
 
 let activeIndex = 0;
 let bgOffset = 0;
