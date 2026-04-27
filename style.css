@@ -5,9 +5,9 @@
 body {
     height: fit-content;
     background-color: #111114;
+    padding-top: 0.1rem;
     margin: 1vmax;
     width: 100%;
-    overflow-x: hidden;
 }
 
 #bg {
@@ -74,22 +74,34 @@ body {
 }
 
 #carousel-selector {
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding: 1.6rem;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    z-index: 999;
+
+    background-color: #000c;
+}
+
+#carousel-selection {
     font-family: "bbh sans hegarty", sans-serif;
     font-size: 3.4vmin;
 
-    position: fixed;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    /* left: 50%;
+    transform: translateX(-50%); */
     /* width: 100%; */
     /* height: 15%; */
     display: flex;
     /* justify-content: space-between; */
     gap: 6vmin;
-    z-index: 999;
 }
 
-#carousel-selector > .selector {
+#carousel-selection > .selector {
     width: max-content;
     color: #aaa;
     cursor: pointer;
@@ -99,7 +111,7 @@ body {
     display: inline;
 }
 
-#carousel-selector > .selector::before {
+#carousel-selection > .selector::before {
     content: "";
     position: absolute;
     background-color: white;
@@ -113,19 +125,19 @@ body {
     transition: width 200ms ease;
 }
 
-#carousel-selector > .selector:hover {
+#carousel-selection > .selector:hover {
     color: white;
 }
 
-#carousel-selector > .selector:hover::before {
+#carousel-selection > .selector:hover::before {
     width: 100%;
 }
 
-#carousel-selector > .selector[data-active="true"] {
+#carousel-selection > .selector[data-active="true"] {
     color: white;
 }
 
-#carousel-selector > .selector[data-active="true"]::before {
+#carousel-selection > .selector[data-active="true"]::before {
     width: 100%;
 }
 
@@ -250,4 +262,8 @@ body {
 
 .linux > .img {
     background-position: 60% center;
+}
+
+.blm_butthole > .caption {
+    font-size: 1.3vw;
 }

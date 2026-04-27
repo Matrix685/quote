@@ -1,5 +1,5 @@
 const main = document.getElementById("main");
-const carouselSelector = document.getElementById("carousel-selector");
+const carouselSelection = document.getElementById("carousel-selection");
 const carouselContainer = document.getElementById("carousel-container");
 // const altolympus = document.getElementById("altolympus");
 // const misc = document.getElementById("misc");
@@ -9,18 +9,18 @@ let quotes = [
         id: "Dimension 20",
         content: [
             {
-                id: "d20temp",
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+                id: "gorg_death",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJm_s2ByzxmPT7Cg4xtfBbWsn-tAZ3vvGEHw&s",
                 quote: '"I died!" - Gorgug Thistlespring',
             },
             {
-                id: "d20temp",
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+                id: "gorg_dad",
+                image: "https://static.wikia.nocookie.net/fantasy-high/images/c/c8/Zac_Oyama_as_Gorgug_Thistlespring.png/revision/latest?cb=20200508135435",
                 quote: '"If someone is your dad, they have to tell you right?" - Gorgug Thistlespring',
             },
             {
-                id: "d20temp",
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+                id: "gorg_disaster",
+                image: "https://external-preview.redd.it/edit-while-theyre-killing-it-with-zac-oyama-adventuring-v0-1SYpdgc5-RwUFoQYTxhxCgmkAbE0zACrwDPbYEgMmtA.jpg?width=640&crop=smart&auto=webp&s=c5b2ca419a8caca748fcbe927297d7da8bdd72c1",
                 quote: '"Tornado! Earthquake!" - Gorgug Thistlespring',
             },
             {
@@ -29,8 +29,8 @@ let quotes = [
                 quote: "just fig flirting with goldenrod because its funny i cant remember specific quotes right now ill fix it i promise",
             },
             {
-                id: "d20temp",
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
+                id: "blm_butthole",
+                image: "https://variety.com/wp-content/uploads/2024/05/Dimension-20-Brennan-Lee-Mulligan.jpg?w=1000&h=563&crop=1",
                 quote: `"And now comes the time as Dungeon Master where I have to decide what skill is involved with jumping up a corn goblin's butthole" - Brennan Lee Mulligan`,
             },
         ],
@@ -121,7 +121,7 @@ let quotes = [
 
             {
                 id: "yesorno",
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelios-i.mashable.com%2Fimagery%2Farticles%2F00QPGsVu3R8QcxdtrRH5XNx%2Fimages-1.fill.size_2000x1125.v1702009412.jpg&f=1&nofb=1&ipt=8e3dad4639640c06cebfbcf17790b607b6122b6e95ccd1c8c9bb64b53af4e896",
+                image: "https://external-preview.redd.it/U4uhn3jfwGR6XHpuynAbRaoYlTXaRSgFz3UYobezGB8.gif?auto=webp&s=9760fc1d125a105b0cb2d45972b4565e8c11dbb2",
                 quote: '"I am the only one out of the loop IT WOULD SEEM" - Brennan Lee Mulligan. "i killed him yeah"',
             },
             {
@@ -153,7 +153,7 @@ quotes.forEach((group, index) => {
 
     carouselContainer.innerHTML += `<div class="carousel" id="${group.id}" data-active="${active}"></div>`;
 
-    carouselSelector.innerHTML += `<p class="selector" data-active="${active}">${group.id}</p>`;
+    carouselSelection.innerHTML += `<p class="selector" data-active="${active}">${group.id}</p>`;
     // for (const quote of group.content) {
 });
 
@@ -219,8 +219,8 @@ let prevPos = {
 };
 
 let mouse = {
-    x: 0,
-    y: 0,
+    x: window.innerWidth,
+    y: window.innerHeight,
 };
 
 let zoomClicked = false;
@@ -270,7 +270,11 @@ document.onmousemove = (e) => {
 let scale = 1;
 
 zoomBox.onwheel = (e) => {
-    scale = e.deltaY < 0 ? scale + 0.1 : Math.max(scale - 0.1, 0.05);
+    if (scale > 5) {
+        scale = e.deltaY < 0 ? scale + 1 : Math.max(scale - 1, 0.05);
+    } else {
+        scale = e.deltaY < 0 ? scale + 0.1 : Math.max(scale - 0.1, 0.05);
+    }
     // dir += Math.max(Math.sign(e.deltaY) / 10, 0.05);
 
     zoomBox.style.scale = scale;
@@ -321,7 +325,7 @@ function unzoom() {
 
     setTimeout(() => (zoomBox.style.scale = scale), 600);
 
-    document.body.style.overflow = "auto";
+    document.body.style.overflowY = "auto";
 
     zoomout.innerHTML = zoomBox.innerHTML;
 
@@ -408,7 +412,7 @@ function selectCarousel(selector, index) {
         });
 
         // console.log(dir);
-        bgOffset += 300 * dir * -1;
+        bgOffset = index * -300;
 
         bg.style.transform = `translateX(${bgOffset}px)`;
 
