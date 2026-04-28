@@ -8,6 +8,7 @@ body {
     padding-top: 0.1rem;
     margin: 1vmax;
     width: 100%;
+    overflow-x: hidden;
 }
 
 #bg {
@@ -84,6 +85,10 @@ body {
     place-items: center;
     z-index: 999;
 
+    transition: background-color 200ms ease;
+}
+
+.scrolled {
     background-color: #000c;
 }
 

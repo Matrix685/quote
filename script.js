@@ -352,6 +352,17 @@ document.onkeydown = (e) => {
     if (e.key == "Escape") unzoom();
 };
 
+const carouselSelector = document.getElementById("carousel-selector");
+
+document.onscroll = () => {
+    // console.log(document.documentElement.scrollTop);
+    if (document.documentElement.scrollTop > 0) {
+        carouselSelector.classList.add("scrolled");
+    } else {
+        carouselSelector.classList.remove("scrolled");
+    }
+};
+
 // hyerplexed anime grid thing but mostly invisible, sometimes quick wipe thing
 const bg = document.getElementById("bg");
 
