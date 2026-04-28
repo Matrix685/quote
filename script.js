@@ -129,6 +129,11 @@ let quotes = [
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelios-i.mashable.com%2Fimagery%2Farticles%2F00QPGsVu3R8QcxdtrRH5XNx%2Fimages-1.fill.size_2000x1125.v1702009412.jpg&f=1&nofb=1&ipt=8e3dad4639640c06cebfbcf17790b607b6122b6e95ccd1c8c9bb64b53af4e896",
                 quote: '"Buttholes, all over the universe" - Izzy Roland',
             },
+            {
+                id: "skulduggery",
+                image: "https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2014/9/15/1410786067310/Derek-Landy-010.jpg?width=465&dpr=1&s=none&crop=none",
+                quote: '"Doors are for people with no imagination" - Skulduggery Pleasant',
+            },
         ],
     },
 ];
