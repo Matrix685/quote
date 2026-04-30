@@ -63,6 +63,11 @@ let quotes = [
                 image: "https://blog.gale.com/wp-content/uploads/2024/07/iStock-1693812103.jpg",
                 quote: `"What's up?" - Anon,<br />"The sky" - altolympus`,
             },
+            {
+                id: "windows",
+                image: "https://i.ytimg.com/vi/PWOlJKnwFHM/maxresdefault.jpg",
+                quote: '"Windows 10: Cool trapezoid... Windows 11: Spineless" - altolympus',
+            },
         ],
     },
     {
@@ -133,6 +138,11 @@ let quotes = [
                 id: "skulduggery",
                 image: "https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2014/9/15/1410786067310/Derek-Landy-010.jpg?width=465&dpr=1&s=none&crop=none",
                 quote: '"Doors are for people with no imagination" - Skulduggery Pleasant',
+            },
+            {
+                id: "dead",
+                image: "https://i.ytimg.com/vi/E4dETjG6MqY/maxresdefault.jpg",
+                quote: '"Then why am I dead?" - Gerard Way',
             },
         ],
     },
@@ -381,6 +391,7 @@ function resize() {
 
     bg.innerHTML = "";
     bg.style.height = Math.max(document.documentElement.offsetHeight, window.innerHeight) + "px";
+    bg.style.width = `calc(100% + ${500 * carousels.length}px)`;
 
     maxWidth = bg.offsetWidth;
     maxHeight = bg.offsetHeight;
@@ -428,7 +439,7 @@ function selectCarousel(selector, index) {
         });
 
         // console.log(dir);
-        bgOffset = index * -300;
+        bgOffset = index * -500;
 
         bg.style.transform = `translateX(${bgOffset}px)`;
 
