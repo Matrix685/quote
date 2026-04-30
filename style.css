@@ -274,6 +274,7 @@ body {
     font-size: 1.3vw;
 }
 
-.windows > .img {
+.windows > .img,
+.jeremy_crazy > .img {
     background-position: center;
 }
