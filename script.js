@@ -43,6 +43,16 @@ let quotes = [
                 image: "https://vhx.imgix.net/chuncensoredstaging/assets/a3499e72-433c-4501-9f6c-4b5f74900a88.png?auto=format%2Ccompress&fit=crop&h=720&q=75&w=1280",
                 quote: '"My hands are sooooo stickyyy" - Jacob Wysocki. "now eat that second devilled egg". "SHITASSSSSS" "i have slain many a fowl beast. many a geese". "i was shot with a laser from space"',
             },
+            {
+                id: "zac_coroner",
+                image: "images/msn_zac_coroner.gif",
+                quote: "*Uncontrollable laughter* - Everyone watching Zac's performance",
+            },
+            {
+                id: "jeremy_crazy",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZjA3ZmMxNWQtNGQ4NS00N2FlLTljYTEtYzg3OGVhYWViYjE3XkEyXkFqcGc%40._V1_QL75_UX500_CR0%2C0%2C500%2C281_.jpg&f=1&nofb=1&ipt=437dd9d1d323777851738121c35c9f895c742970f5c37acf5e9d07ebccf578fe",
+                quote: '"It was craaaaazy!" - Jeremy Culhane',
+            },
         ],
     },
     {
@@ -189,7 +199,7 @@ quotes.forEach((group, index) => {
 						<p class="caption">${quote.quote}</p>
 					</div>
 				</div>
-	        </div>;
+	        </div>
 		`;
     }
 });
