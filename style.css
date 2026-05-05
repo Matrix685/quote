@@ -242,6 +242,44 @@ body {
     height: 100%;
 }
 
+#big {
+    font-family: "bbh sans hegarty", sans-serif;
+    color: white;
+    font-size: 3.4vmin;
+
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 0px 14vmin;
+    box-sizing: border-box;
+    left: 0px;
+    top: 0px;
+    backdrop-filter: blur(50px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 2vmin;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    gap: 4vmin;
+}
+
+.name {
+    width: 30%;
+    text-align: right;
+}
+
+.speech {
+    width: 70%;
+}
+
 .sans > .caption {
     font-family: "comic sans ms", "comic relief";
     line-height: min(3.5vw, 2.5rem);

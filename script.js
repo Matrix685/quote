@@ -56,6 +56,21 @@ let quotes = [
         ],
     },
     {
+        id: "Brooklyn 99",
+        content: [
+            {
+                id: "email",
+                image: "https://www.tvguide.com/a/img/resize/2c1149c8b636e3e3418f2976845bee4931d89ccc/hub/2020/06/23/0702856d-fbd2-4541-8cf4-6b548f84cd54/200623-terry-crews-brooklyn-nine-nine.jpg?auto=webp&fit=crop&height=1080&width=1920",
+                quote: '"You emailed them all! With your email, to their email!" - Terry',
+            },
+            {
+                id: "bagel",
+                image: "https://ichef.bbci.co.uk/news/480/cpsprodpb/F85F/production/_132038536_crgettyimages-1235277437.jpg.webp",
+                quote: '"Well, I know just the thing to cheer you up! Wuntch is dead! Bagel! Bagel! Bagel!" - Captain Holt',
+            },
+        ],
+    },
+    {
         id: "Altolympus",
         content: [
             {
@@ -133,11 +148,19 @@ let quotes = [
                 image: "https://d23.com/app/uploads/2021/06/1180w-600h-060921_The-Owl-House_season-two_iris.jpg",
                 quote: `"Quitting! It's like trying, but easier" - Eda the Owl Lady`,
             },
-
             {
                 id: "yesorno",
                 image: "https://external-preview.redd.it/U4uhn3jfwGR6XHpuynAbRaoYlTXaRSgFz3UYobezGB8.gif?auto=webp&s=9760fc1d125a105b0cb2d45972b4565e8c11dbb2",
-                quote: '"I am the only one out of the loop IT WOULD SEEM" - Brennan Lee Mulligan. "i killed him yeah"',
+                // quote: '"I am the only one out of the loop IT WOULD SEEM" - Brennan Lee Mulligan. "i killed him yeah"',
+                quote: [
+                    ["Brennanwhatifthis goesdiffline:", "I am the only one out of the loop, IT WOULD SEEM!"],
+                    ["Zac:", "Woah, dude"],
+                    [
+                        "Ally:",
+                        "Why do bad things happen to good people? I'm just asking like jeez omg why though i don't get it hey is this long enough i want it to be on multiple lines so i can see how this would look i dont know if ive written enough but hey",
+                    ],
+                    ["Lou:", "I'm rich fuck you"],
+                ],
             },
             {
                 id: "buttholes",
@@ -152,7 +175,7 @@ let quotes = [
             {
                 id: "dead",
                 image: "https://i.ytimg.com/vi/E4dETjG6MqY/maxresdefault.jpg",
-                quote: '"Then why am I dead?" - Gerard Way',
+                quote: '"Then, why am I dead?!" - Gerard Way',
             },
         ],
     },
@@ -186,11 +209,32 @@ quotes.forEach((group, index) => {
 
 const carousels = document.querySelectorAll(".carousel");
 
+const big = document.getElementById("big");
+
 quotes.forEach((group, index) => {
     // console.log("this should show up twice");
     // group.content.forEach((quote, index) => {
     for (const quote of group.content) {
-        // console.log("this should show up more than twice");
+        if (quote.id == "yesorno") {
+            for (const line of quote.quote) {
+                let row = document.createElement("div");
+                row.classList.add("row");
+
+                let name = document.createElement("div");
+                name.classList.add("name");
+                name.innerText = line[0];
+
+                let speech = document.createElement("div");
+                speech.classList.add("speech");
+                speech.innerText = line[1];
+
+                row.appendChild(name);
+                row.appendChild(speech);
+
+                big.appendChild(row);
+            }
+        }
+
         carousels[index].innerHTML += `
 			<div id="outer">
 				<div class="quote">
@@ -204,7 +248,7 @@ quotes.forEach((group, index) => {
     }
 });
 
-const outers = document.querySelectorAll("#outer");
+const outers = document.querySelectorAll("#outer:not(div:has(.yesorno))");
 let timeouts = [];
 
 function perspective(e) {
