@@ -153,13 +153,13 @@ let quotes = [
                 image: "https://external-preview.redd.it/U4uhn3jfwGR6XHpuynAbRaoYlTXaRSgFz3UYobezGB8.gif?auto=webp&s=9760fc1d125a105b0cb2d45972b4565e8c11dbb2",
                 // quote: '"I am the only one out of the loop IT WOULD SEEM" - Brennan Lee Mulligan. "i killed him yeah"',
                 quote: [
-                    ["Brennanwhatifthis goesdiffline:", "I am the only one out of the loop, IT WOULD SEEM!"],
-                    ["Zac:", "Woah, dude"],
+                    ["Brennanwhatifthis goesdiffline", "I am the only one out of the loop, IT WOULD SEEM!"],
+                    ["Zac", "Woah, dude"],
                     [
-                        "Ally:",
+                        "Ally",
                         "Why do bad things happen to good people? I'm just asking like jeez omg why though i don't get it hey is this long enough i want it to be on multiple lines so i can see how this would look i dont know if ive written enough but hey",
                     ],
-                    ["Lou:", "I'm rich fuck you"],
+                    ["Lou", "I'm rich fuck you"],
                 ],
             },
             {
@@ -199,8 +199,7 @@ quotes.forEach((group, index) => {
     // console.log(index);
     // console.log("this should show up twice");
 
-    carouselContainer.innerHTML += `<div class="carousel" id="${group.id}" data-active="${active}"></div>`;
-
+    carouselContainer.innerHTML += `<div class="carousel" data-active="${active}"></div>`;
     carouselSelection.innerHTML += `<p class="selector" data-active="${active}">${group.id}</p>`;
     // for (const quote of group.content) {
 });
@@ -233,9 +232,8 @@ quotes.forEach((group, index) => {
 
                 big.appendChild(row);
             }
-        }
-
-        carousels[index].innerHTML += `
+        } else {
+            carousels[index].innerHTML += `
 			<div id="outer">
 				<div class="quote">
 					<div class="container ${quote.id}">
@@ -245,10 +243,11 @@ quotes.forEach((group, index) => {
 				</div>
 	        </div>
 		`;
+        }
     }
 });
 
-const outers = document.querySelectorAll("#outer:not(div:has(.yesorno))");
+const outers = document.querySelectorAll("#outer");
 let timeouts = [];
 
 function perspective(e) {
