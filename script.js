@@ -93,6 +93,11 @@ let quotes = [
                 image: "https://i.ytimg.com/vi/PWOlJKnwFHM/maxresdefault.jpg",
                 quote: '"Windows 10: Cool trapezoid... Windows 11: Spineless" - altolympus',
             },
+{
+id: "celeste_better",
+image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Fhd%2Fmadeline-scaling-celeste-mountain-85omnoj80uamw0r5.jpg&f=1&ipt=7eba0c3fe443465aa7f7f5cb4de8e34a03de1d7cdfd0c1b888008250b02d51c2",
+quote: '"Celeste better" - altolympus',
+},
         ],
     },
     {
