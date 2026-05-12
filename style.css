@@ -242,6 +242,10 @@ body {
     height: 100%;
 }
 
+.hidden {
+    display: none;
+}
+
 #big {
     font-family: "bbh sans hegarty", sans-serif;
     color: white;
@@ -265,6 +269,15 @@ body {
     z-index: 1000;
 }
 
+.leave {
+    position: fixed;
+    margin: 2.4vmin;
+    width: 6vmin;
+    aspect-ratio: 1;
+    top: 0px;
+    right: 0px;
+}
+
 .row {
     width: 100%;
     display: flex;
@@ -277,7 +290,7 @@ body {
     position: relative;
 }
 
-.name::after {
+.colon {
     content: ":";
     position: absolute;
 }

@@ -93,11 +93,11 @@ let quotes = [
                 image: "https://i.ytimg.com/vi/PWOlJKnwFHM/maxresdefault.jpg",
                 quote: '"Windows 10: Cool trapezoid... Windows 11: Spineless" - altolympus',
             },
-{
-id: "celeste_better",
-image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Fhd%2Fmadeline-scaling-celeste-mountain-85omnoj80uamw0r5.jpg&f=1&ipt=7eba0c3fe443465aa7f7f5cb4de8e34a03de1d7cdfd0c1b888008250b02d51c2",
-quote: '"Celeste better" - altolympus',
-},
+            {
+                id: "celeste_better",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Fhd%2Fmadeline-scaling-celeste-mountain-85omnoj80uamw0r5.jpg&f=1&ipt=7eba0c3fe443465aa7f7f5cb4de8e34a03de1d7cdfd0c1b888008250b02d51c2",
+                quote: '"Celeste better" - altolympus',
+            },
         ],
     },
     {
@@ -157,13 +157,16 @@ quote: '"Celeste better" - altolympus',
                 id: "yesorno",
                 image: "https://external-preview.redd.it/U4uhn3jfwGR6XHpuynAbRaoYlTXaRSgFz3UYobezGB8.gif?auto=webp&s=9760fc1d125a105b0cb2d45972b4565e8c11dbb2",
                 // quote: '"I am the only one out of the loop IT WOULD SEEM" - Brennan Lee Mulligan. "i killed him yeah"',
-                quote: [
+                quote: "THIS IS TEMPORARY",
+                script: [
                     ["Brennanwhatifthis goesdiffline", "I am the only one out of the loop, IT WOULD SEEM!"],
+                    ["", "I am Brennan Lee Mulligan and you shall all TREMBLE BEFORE MY WRATH"],
                     ["Zac", "Woah, dude"],
                     [
                         "Ally",
-                        "Why do bad things happen to good people? I'm just asking like jeez omg why though i don't get it hey is this long enough i want it to be on multiple lines so i can see how this would look i dont know if ive written enough but hey",
+                        "Why do bad things happen to good people? I'm just asking like jeez omg why though i don't get it hey is this long enough i want it to be on multiple lines",
                     ],
+                    ["", "so i can see how this would look i dont know if ive written enough but hey"],
                     ["Lou", "I'm rich fuck you"],
                 ],
             },
@@ -218,39 +221,67 @@ const big = document.getElementById("big");
 quotes.forEach((group, index) => {
     // console.log("this should show up twice");
     // group.content.forEach((quote, index) => {
+
     for (const quote of group.content) {
         if (quote.id == "yesorno") {
-            for (const line of quote.quote) {
-                let row = document.createElement("div");
-                row.classList.add("row");
+            carousels[index].innerHTML += `
+                <div id="outer">
+                    <div class="quote">
+                        <div class="container ${quote.id}">
+                            <div class="img" style="background-image: url(${quote.image})"></div>
+                            <p class="caption">${quote.quote}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
 
-                let name = document.createElement("div");
-                name.classList.add("name");
-                name.innerText = line[0];
-
-                let speech = document.createElement("div");
-                speech.classList.add("speech");
-                speech.innerText = line[1];
-
-                row.appendChild(name);
-                row.appendChild(speech);
-
-                big.appendChild(row);
-            }
+            bigQuote(quote.script);
         } else {
             carousels[index].innerHTML += `
-			<div id="outer">
-				<div class="quote">
-					<div class="container ${quote.id}">
-						<div class="img" style="background-image: url(${quote.image})"></div>
-						<p class="caption">${quote.quote}</p>
-					</div>
-				</div>
-	        </div>
-		`;
+			    <div id="outer">
+                    <div class="quote">
+                        <div class="container ${quote.id}">
+                            <div class="img" style="background-image: url(${quote.image})"></div>
+                            <p class="caption">${quote.quote}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
     }
 });
+
+function bigQuote(script) {
+    // const verywell = JSON.parse(script);
+    let hidden = document.createElement("div");
+    hidden.classList.add("hidden");
+
+    for (const line of script) {
+        let row = document.createElement("div");
+        row.classList.add("row");
+
+        let name = document.createElement("div");
+        name.classList.add("name");
+        name.innerText = line[0];
+
+        if (line[0] != "") {
+            let colon = document.createElement("span");
+            colon.classList.add("colon");
+            colon.innerHTML = ":";
+            name.appendChild(colon);
+        }
+
+        let speech = document.createElement("div");
+        speech.classList.add("speech");
+        speech.innerText = line[1];
+
+        row.appendChild(name);
+        row.appendChild(speech);
+
+        hidden.appendChild(row);
+    }
+    document.querySelector(".yesorno").appendChild(hidden);
+}
 
 const outers = document.querySelectorAll("#outer");
 let timeouts = [];
@@ -354,7 +385,7 @@ zoomBox.onwheel = (e) => {
 };
 
 function zoom(el) {
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
 
     const p = el.getBoundingClientRect();
 
@@ -420,6 +451,10 @@ function unzoom() {
 }
 
 document.onmousedown = unzoom;
+
+function leaveBig() {
+    big.style.display = "none";
+}
 
 document.onkeydown = (e) => {
     if (e.key == "Escape") unzoom();
