@@ -229,6 +229,12 @@ let quotes = [
                 image: "https://i.ytimg.com/vi/E4dETjG6MqY/maxresdefault.jpg",
                 quote: '"Then, why am I dead?!" - Gerard Way',
             },
+            {
+                id: "gerson_old",
+                big: false,
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fk5OuQ9OuqbE%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=b86784b91ea788c07148b01867a53a4d8616d1e258cca345edee611cb5f499e9",
+                quote: `"I'm old!" - Gerson Boom`,
+            },
         ],
     },
 ];
