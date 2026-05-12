@@ -10,26 +10,31 @@ let quotes = [
         content: [
             {
                 id: "gorg_death",
+                big: false,
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJm_s2ByzxmPT7Cg4xtfBbWsn-tAZ3vvGEHw&s",
                 quote: '"I died!" - Gorgug Thistlespring',
             },
             {
                 id: "gorg_dad",
+                big: false,
                 image: "https://static.wikia.nocookie.net/fantasy-high/images/c/c8/Zac_Oyama_as_Gorgug_Thistlespring.png/revision/latest?cb=20200508135435",
                 quote: '"If someone is your dad, they have to tell you right?" - Gorgug Thistlespring',
             },
             {
                 id: "gorg_disaster",
+                big: false,
                 image: "https://external-preview.redd.it/edit-while-theyre-killing-it-with-zac-oyama-adventuring-v0-1SYpdgc5-RwUFoQYTxhxCgmkAbE0zACrwDPbYEgMmtA.jpg?width=640&crop=smart&auto=webp&s=c5b2ca419a8caca748fcbe927297d7da8bdd72c1",
                 quote: '"Tornado! Earthquake!" - Gorgug Thistlespring',
             },
             {
                 id: "d20temp",
+                big: false,
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2F3vkSn8zyPx1aX8qBFCw00frCFhQ.jpg&f=1&nofb=1&ipt=f45369423fd0668616caa0b80e5bb76e20566856420770deb8e204b20755a754",
                 quote: "just fig flirting with goldenrod because its funny i cant remember specific quotes right now ill fix it i promise",
             },
             {
                 id: "blm_butthole",
+                big: false,
                 image: "https://variety.com/wp-content/uploads/2024/05/Dimension-20-Brennan-Lee-Mulligan.jpg?w=1000&h=563&crop=1",
                 quote: `"And now comes the time as Dungeon Master where I have to decide what skill is involved with jumping up a corn goblin's butthole" - Brennan Lee Mulligan`,
             },
@@ -40,16 +45,19 @@ let quotes = [
         content: [
             {
                 id: "knight",
+                big: false,
                 image: "https://vhx.imgix.net/chuncensoredstaging/assets/a3499e72-433c-4501-9f6c-4b5f74900a88.png?auto=format%2Ccompress&fit=crop&h=720&q=75&w=1280",
                 quote: '"My hands are sooooo stickyyy" - Jacob Wysocki. "now eat that second devilled egg". "SHITASSSSSS" "i have slain many a fowl beast. many a geese". "i was shot with a laser from space"',
             },
             {
                 id: "zac_coroner",
+                big: false,
                 image: "images/msn_zac_coroner.gif",
                 quote: "*Uncontrollable laughter* - Everyone watching Zac's performance",
             },
             {
                 id: "jeremy_crazy",
+                big: false,
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZjA3ZmMxNWQtNGQ4NS00N2FlLTljYTEtYzg3OGVhYWViYjE3XkEyXkFqcGc%40._V1_QL75_UX500_CR0%2C0%2C500%2C281_.jpg&f=1&nofb=1&ipt=437dd9d1d323777851738121c35c9f895c742970f5c37acf5e9d07ebccf578fe",
                 quote: '"It was craaaaazy!" - Jeremy Culhane',
             },
@@ -60,11 +68,13 @@ let quotes = [
         content: [
             {
                 id: "email",
+                big: false,
                 image: "https://www.tvguide.com/a/img/resize/2c1149c8b636e3e3418f2976845bee4931d89ccc/hub/2020/06/23/0702856d-fbd2-4541-8cf4-6b548f84cd54/200623-terry-crews-brooklyn-nine-nine.jpg?auto=webp&fit=crop&height=1080&width=1920",
                 quote: '"You emailed them all! With your email, to their email!" - Terry',
             },
             {
                 id: "bagel",
+                big: false,
                 image: "https://ichef.bbci.co.uk/news/480/cpsprodpb/F85F/production/_132038536_crgettyimages-1235277437.jpg.webp",
                 quote: '"Well, I know just the thing to cheer you up! Wuntch is dead! Bagel! Bagel! Bagel!" - Captain Holt',
             },
@@ -75,26 +85,31 @@ let quotes = [
         content: [
             {
                 id: "altolympus",
+                big: false,
                 image: "https://www.ancientworldmagazine.com/site/assets/files/1195/rubens-phaeton-1.jpg",
                 quote: `"You can't just <i>SAY</i> perchance" - altolympus`,
             },
             {
                 id: "linux",
+                big: false,
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRzrZVQJhpaQeiO4NYlGTNMKc26LHTA-o-RA&s",
                 quote: '"You should install a package about that" - altolympus',
             },
             {
                 id: "sky",
+                big: false,
                 image: "https://blog.gale.com/wp-content/uploads/2024/07/iStock-1693812103.jpg",
                 quote: `"What's up?" - Anon,<br />"The sky" - altolympus`,
             },
             {
                 id: "windows",
+                big: false,
                 image: "https://i.ytimg.com/vi/PWOlJKnwFHM/maxresdefault.jpg",
                 quote: '"Windows 10: Cool trapezoid... Windows 11: Spineless" - altolympus',
             },
             {
                 id: "celeste_better",
+                big: false,
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapers.com%2Fimages%2Fhd%2Fmadeline-scaling-celeste-mountain-85omnoj80uamw0r5.jpg&f=1&ipt=7eba0c3fe443465aa7f7f5cb4de8e34a03de1d7cdfd0c1b888008250b02d51c2",
                 quote: '"Celeste better" - altolympus',
             },
@@ -105,56 +120,67 @@ let quotes = [
         content: [
             {
                 id: "spider",
+                big: false,
                 image: "https://lh3.googleusercontent.com/proxy/mtBzXWcpqeV9IGsqzM9f4KVmPa8eukHxzdQlQxK2mPDV4vunA14hWOy1JbSw1zgFSm-QzW0GUAGLUXsNRTYyGtLeVgQpGh2bGLSRYdONBntYJhi6WL21Zq6GIK6Gufh0IL8WeU4sNIYvQ8C6B-ycto_WQA",
                 quote: '"With great power comes great responsibility" - Ben Parker',
             },
             {
                 id: "owl",
+                big: false,
                 image: "https://spotlight153.com/wp-content/uploads/2022/06/62251732-0-q80-900x506.jpg",
                 quote: '"Now I am both King and Queen, best of both things" - King',
             },
             {
                 id: "amphibia",
+                big: false,
                 image: "https://upload.wikimedia.org/wikipedia/en/4/45/Amphibia_Season_3_Intro_Image.jpg",
                 quote: '"Spranne against the world!"- Sprig and Anne<br />(while against the world)',
             },
             {
                 id: "history",
+                big: false,
                 image: "https://i.ytimg.com/vi/xuCn8ux2gbs/maxresdefault.jpg",
                 quote: '"Those are the Tamil Kings, no one conquers the Tamil Kings" - Bill Wurtz',
             },
             {
                 id: "arcane",
+                big: false,
                 image: "https://cdn.europosters.eu/image/1300/254049.jpg",
                 quote: '"In our pursuit of greatness, we failed to do good" - Viktor',
             },
             {
                 id: "undertale",
+                big: false,
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyzjmDRF7gS0Jt3XBMQ6PUm5WsVJdc1G0JBw&s",
                 quote: `"Despite everything, it's still you" - Asgore's mirror`,
             },
             {
                 id: "sans",
+                big: false,
                 image: "https://cdn.mos.cms.futurecdn.net/5nULLkfBtxNpjR5SmvmSw-1200-80.jpg",
                 quote: `"my brother has a very special attack" - sans`,
             },
             {
                 id: "aurora",
+                big: false,
                 image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpTBpnkwrN-hu9sgXK1KNhVYNZAwb_qXwHOQ&s",
                 quote: '"Nobody dies. Not for me. Not ever" - Kendal',
             },
             {
                 id: "hades",
+                big: false,
                 image: "https://m.media-amazon.com/images/M/MV5BYjBlODg3ZTgtN2ViNS00MDlmLWIyMTctZmQ2NWYwMzE2N2RmXkEyXkFqcGdeQVRoaXJkUGFydHlJbmdlc3Rpb25Xb3JrZmxvdw@@._V1_.jpg",
                 quote: '"There is no escape." - Hades (from Hades)',
             },
             {
                 id: "eda",
+                big: false,
                 image: "https://d23.com/app/uploads/2021/06/1180w-600h-060921_The-Owl-House_season-two_iris.jpg",
                 quote: `"Quitting! It's like trying, but easier" - Eda the Owl Lady`,
             },
             {
                 id: "yesorno",
+                big: true,
                 image: "https://external-preview.redd.it/U4uhn3jfwGR6XHpuynAbRaoYlTXaRSgFz3UYobezGB8.gif?auto=webp&s=9760fc1d125a105b0cb2d45972b4565e8c11dbb2",
                 // quote: '"I am the only one out of the loop IT WOULD SEEM" - Brennan Lee Mulligan. "i killed him yeah"',
                 quote: "THIS IS TEMPORARY",
@@ -162,26 +188,44 @@ let quotes = [
                     ["Brennanwhatifthis goesdiffline", "I am the only one out of the loop, IT WOULD SEEM!"],
                     ["", "I am Brennan Lee Mulligan and you shall all TREMBLE BEFORE MY WRATH"],
                     ["Zac", "Woah, dude"],
-                    [
-                        "Ally",
-                        "Why do bad things happen to good people? I'm just asking like jeez omg why though i don't get it hey is this long enough i want it to be on multiple lines",
-                    ],
+                    ["Ally", "Why do bad things happen to good people? I'm just asking like jeez omg why though i don't get it hey is this long enough i want it to be on multiple lines"],
                     ["", "so i can see how this would look i dont know if ive written enough but hey"],
                     ["Lou", "I'm rich fuck you"],
                 ],
             },
             {
+                id: "shitass",
+                big: true,
+                image: "https://external-preview.redd.it/U4uhn3jfwGR6XHpuynAbRaoYlTXaRSgFz3UYobezGB8.gif?auto=webp&s=9760fc1d125a105b0cb2d45972b4565e8c11dbb2",
+                quote: '"SHITASS, DUDE! SHITASS! WHY?! Fuuck!" - Brennan Lee Mulligan',
+                script: [
+                    ["Brennan", "Fuck! Shit."],
+                    ["Josh", "OOOH! OOOOOOHHH!"],
+                    ["Brennan", "Oh fuck. No! Oh, my point! Fuck! Oh, my point, shit! Wait, pause it, shit! Oh fuck, oh shit, oh fuckass!"],
+                    ["", "*whine* Oh, my point! Noo! Ohh. Oh, fuck I buffed it! I fucking buffed it, dude, I shitted it! Noo!"],
+                    ["", "Nooo! I'm supposed to be the smarty! Noooo!"],
+                    ["Josh", "You're okay! Bro, it's okay. We can help y-"],
+                    ["Brennan", "Help! *choking noises*"],
+                    ["Josh", "Shhh! Shhhhhh! Shhhhh!"],
+                    ["Zac", "You're dead. YOU'RE DEAD!"],
+                    ["Josh", "Shhh."],
+                ],
+            },
+            {
                 id: "buttholes",
+                big: false,
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelios-i.mashable.com%2Fimagery%2Farticles%2F00QPGsVu3R8QcxdtrRH5XNx%2Fimages-1.fill.size_2000x1125.v1702009412.jpg&f=1&nofb=1&ipt=8e3dad4639640c06cebfbcf17790b607b6122b6e95ccd1c8c9bb64b53af4e896",
                 quote: '"Buttholes, all over the universe" - Izzy Roland',
             },
             {
                 id: "skulduggery",
+                big: false,
                 image: "https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2014/9/15/1410786067310/Derek-Landy-010.jpg?width=465&dpr=1&s=none&crop=none",
                 quote: '"Doors are for people with no imagination" - Skulduggery Pleasant',
             },
             {
                 id: "dead",
+                big: false,
                 image: "https://i.ytimg.com/vi/E4dETjG6MqY/maxresdefault.jpg",
                 quote: '"Then, why am I dead?!" - Gerard Way',
             },
@@ -223,35 +267,28 @@ quotes.forEach((group, index) => {
     // group.content.forEach((quote, index) => {
 
     for (const quote of group.content) {
-        if (quote.id == "yesorno") {
-            carousels[index].innerHTML += `
-                <div id="outer">
-                    <div class="quote">
-                        <div class="container ${quote.id}">
-                            <div class="img" style="background-image: url(${quote.image})"></div>
-                            <p class="caption">${quote.quote}</p>
-                        </div>
-                    </div>
-                </div>
-            `;
+        let outer = document.createElement("div");
+        outer.id = "outer";
+        outer.dataset.big = quote.big;
 
-            bigQuote(quote.script);
-        } else {
-            carousels[index].innerHTML += `
-			    <div id="outer">
-                    <div class="quote">
-                        <div class="container ${quote.id}">
-                            <div class="img" style="background-image: url(${quote.image})"></div>
-                            <p class="caption">${quote.quote}</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
+        // #region different colours for different names
+        if (quote.big) bigQuote(quote.script, outer);
+
+        outer.innerHTML += `
+			<div class="quote">
+				<div class="container ${quote.id}">
+					<div class="img" style="background-image: url(${quote.image})"></div>
+					<p class="caption">${quote.quote}</p>
+				</div>
+			</div>
+		`;
+
+        carousels[index].appendChild(outer);
     }
+    // }
 });
 
-function bigQuote(script) {
+function bigQuote(script, outer) {
     // const verywell = JSON.parse(script);
     let hidden = document.createElement("div");
     hidden.classList.add("hidden");
@@ -280,7 +317,8 @@ function bigQuote(script) {
 
         hidden.appendChild(row);
     }
-    document.querySelector(".yesorno").appendChild(hidden);
+
+    outer.appendChild(hidden);
 }
 
 const outers = document.querySelectorAll("#outer");
@@ -288,7 +326,7 @@ let timeouts = [];
 
 function perspective(e) {
     const outer = e.target.closest("#outer");
-    const quote = outer.firstElementChild;
+    const quote = outer.querySelector(".quote");
 
     let px = e.offsetX / outer.offsetWidth;
     let py = 1 - e.offsetY / outer.offsetHeight;
@@ -310,7 +348,16 @@ outers.forEach((outer, i) => {
         timeouts[i] = setTimeout(() => (outer.style.zIndex = "1"), 200);
     };
 
-    outer.onmousedown = () => setTimeout(() => zoom(outer));
+    outer.onmousedown = () => {
+        if (outer.dataset.big == "true") {
+            big.lastElementChild.appendChild(outer.querySelector(".hidden").cloneNode(true));
+            big.style.display = "flex";
+
+            document.body.style.overflowY = "hidden";
+        } else {
+            setTimeout(() => zoom(outer));
+        }
+    };
 });
 
 let zoomBox = document.getElementById("zoom");
@@ -454,6 +501,8 @@ document.onmousedown = unzoom;
 
 function leaveBig() {
     big.style.display = "none";
+    big.lastElementChild.innerHTML = "";
+    document.body.style.overflowY = "auto";
 }
 
 document.onkeydown = (e) => {

@@ -95,7 +95,7 @@ body {
 
 #carousel-selection {
     font-family: "bbh sans hegarty", sans-serif;
-    font-size: 3.4vmin;
+    font-size: 1.6vw;
 
     position: relative;
     /* left: 50%;
@@ -242,7 +242,7 @@ body {
     height: 100%;
 }
 
-.hidden {
+#outer .hidden {
     display: none;
 }
 
@@ -260,22 +260,36 @@ body {
     top: 0px;
     backdrop-filter: blur(50px);
 
-    display: flex;
-    flex-direction: column;
-    gap: 2vmin;
     justify-content: center;
     align-items: center;
 
     z-index: 1000;
 }
 
+#big > #content > .hidden {
+    display: flex;
+    flex-direction: column;
+    gap: 2vmin;
+    justify-content: center;
+    align-items: center;
+}
+
 .leave {
     position: fixed;
-    margin: 2.4vmin;
-    width: 6vmin;
+    background-color: #000c;
+    border: none;
+    display: grid;
+    place-items: center;
+    width: 8vmin;
     aspect-ratio: 1;
+    cursor: pointer;
     top: 0px;
     right: 0px;
+}
+
+.leave > svg {
+    width: 40%;
+    aspect-ratio: 1;
 }
 
 .row {

@@ -15,8 +15,16 @@
             <div id="carousel-container"></div>
         </div>
 
-        <div id="big">
-            <button onclick="leaveBig()" class="leave">leave</button>
+        <div id="big" style="display: none">
+            <button onclick="leaveBig()" class="leave">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <line fill="none" stroke="#fff" x1="10" y1="10" x2="110" y2="110" id="svg_1" stroke-linejoin="undefined" stroke-linecap="undefined" stroke-width="30" />
+                        <line fill="none" stroke="#fff" x1="110" y1="10" x2="10" y2="110" id="svg_2" stroke-linejoin="undefined" stroke-linecap="undefined" stroke-width="30" />
+                    </g>
+                </svg>
+            </button>
+            <div id="content"></div>
         </div>
 
         <div id="zoom" style="display: none; scale: 1"></div>
