@@ -2,20 +2,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Artifika&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap");
 
+* {
+    box-sizing: border-box;
+}
+
 body {
-    height: fit-content;
     background-color: #111114;
-    padding-top: 0.1rem;
-    margin: 1vmax;
+    margin: 0vmax;
     width: 100%;
     overflow-x: hidden;
 }
 
 #bg {
     position: absolute;
-    /* height: 100%; */
-    /* width: 100%; */
-    /* width: calc(100% + 800px); */
     inset: 0px;
     transform: translateX(0%);
     background: linear-gradient(to right, #5f10c7, #ee15b8, #5f10c7);
@@ -72,7 +71,7 @@ body {
 #carousel-container {
     position: relative;
     width: 100%;
-    margin-top: 8vh;
+    margin-top: 10vh;
 }
 
 #carousel-selector {
@@ -81,7 +80,6 @@ body {
     left: 0px;
     top: 0px;
     padding: 1.6rem;
-    box-sizing: border-box;
     display: grid;
     place-items: center;
     z-index: 999;
@@ -255,9 +253,9 @@ body {
     height: 100%;
     position: fixed;
     padding: 0px 14vmin;
-    box-sizing: border-box;
     left: 0px;
     top: 0px;
+    -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
 
     justify-content: center;

@@ -1,8 +1,6 @@
 const main = document.getElementById("main");
 const carouselSelection = document.getElementById("carousel-selection");
 const carouselContainer = document.getElementById("carousel-container");
-// const altolympus = document.getElementById("altolympus");
-// const misc = document.getElementById("misc");
 
 let quotes = [
     {
@@ -60,6 +58,24 @@ let quotes = [
                 big: false,
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BZjA3ZmMxNWQtNGQ4NS00N2FlLTljYTEtYzg3OGVhYWViYjE3XkEyXkFqcGc%40._V1_QL75_UX500_CR0%2C0%2C500%2C281_.jpg&f=1&nofb=1&ipt=437dd9d1d323777851738121c35c9f895c742970f5c37acf5e9d07ebccf578fe",
                 quote: '"It was craaaaazy!" - Jeremy Culhane',
+            },
+            {
+                id: "shitass",
+                big: true,
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.belloflostsouls.net%2Fwp-content%2Fuploads%2F2024%2F02%2FbrennanLM-game-changer.jpg&f=1&nofb=1&ipt=b0c0aecb7a35ed1ea4c95f57d02eb543f0502a2e233c193ebb098afc315f7b1f",
+                quote: '"SHITASS, DUDE!" - Brennan Lee Mulligan',
+                script: [
+                    ["Brennan", "Fuck! Shit."],
+                    ["Josh", "OOOH! OOOOOOHHH!"],
+                    ["Brennan", "Oh fuck. No! Oh, my point! Fuck! Oh, my point, shit! Wait, pause it, shit! Oh fuck, oh shit, oh fuckass!"],
+                    ["", "*whine* Oh, my point! Noo! Ohh. Oh, fuck I buffed it! I fucking buffed it, dude, I shitted it! Noo!"],
+                    ["", "Nooo! I'm supposed to be the smarty! Noooo!"],
+                    ["Josh", "You're okay! Bro, it's okay. We can help y-"],
+                    ["Brennan", "Help! *choking noises*"],
+                    ["Josh", "Shhh! Shhhhhh! Shhhhh!"],
+                    ["Zac", "You're dead. YOU'RE DEAD!"],
+                    ["Josh", "Shhh."],
+                ],
             },
         ],
     },
@@ -194,24 +210,6 @@ let quotes = [
                 ],
             },
             {
-                id: "shitass",
-                big: true,
-                image: "https://external-preview.redd.it/U4uhn3jfwGR6XHpuynAbRaoYlTXaRSgFz3UYobezGB8.gif?auto=webp&s=9760fc1d125a105b0cb2d45972b4565e8c11dbb2",
-                quote: '"SHITASS, DUDE! SHITASS! WHY?! Fuuck!" - Brennan Lee Mulligan',
-                script: [
-                    ["Brennan", "Fuck! Shit."],
-                    ["Josh", "OOOH! OOOOOOHHH!"],
-                    ["Brennan", "Oh fuck. No! Oh, my point! Fuck! Oh, my point, shit! Wait, pause it, shit! Oh fuck, oh shit, oh fuckass!"],
-                    ["", "*whine* Oh, my point! Noo! Ohh. Oh, fuck I buffed it! I fucking buffed it, dude, I shitted it! Noo!"],
-                    ["", "Nooo! I'm supposed to be the smarty! Noooo!"],
-                    ["Josh", "You're okay! Bro, it's okay. We can help y-"],
-                    ["Brennan", "Help! *choking noises*"],
-                    ["Josh", "Shhh! Shhhhhh! Shhhhh!"],
-                    ["Zac", "You're dead. YOU'RE DEAD!"],
-                    ["Josh", "Shhh."],
-                ],
-            },
-            {
                 id: "buttholes",
                 big: false,
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhelios-i.mashable.com%2Fimagery%2Farticles%2F00QPGsVu3R8QcxdtrRH5XNx%2Fimages-1.fill.size_2000x1125.v1702009412.jpg&f=1&nofb=1&ipt=8e3dad4639640c06cebfbcf17790b607b6122b6e95ccd1c8c9bb64b53af4e896",
@@ -249,17 +247,11 @@ function mix(arr) {
 
 quotes.forEach((n) => mix(n.content));
 
-// for (const group of quotes) {
 quotes.forEach((group, index) => {
     let active = index == 0;
 
-    // console.log(active);
-    // console.log(index);
-    // console.log("this should show up twice");
-
     carouselContainer.innerHTML += `<div class="carousel" data-active="${active}"></div>`;
     carouselSelection.innerHTML += `<p class="selector" data-active="${active}">${group.id}</p>`;
-    // for (const quote of group.content) {
 });
 
 // help me
@@ -267,11 +259,9 @@ quotes.forEach((group, index) => {
 const carousels = document.querySelectorAll(".carousel");
 
 const big = document.getElementById("big");
+const content = big.lastElementChild;
 
 quotes.forEach((group, index) => {
-    // console.log("this should show up twice");
-    // group.content.forEach((quote, index) => {
-
     for (const quote of group.content) {
         let outer = document.createElement("div");
         outer.id = "outer";
@@ -295,7 +285,6 @@ quotes.forEach((group, index) => {
 });
 
 function bigQuote(script, outer) {
-    // const verywell = JSON.parse(script);
     let hidden = document.createElement("div");
     hidden.classList.add("hidden");
 
@@ -356,8 +345,13 @@ outers.forEach((outer, i) => {
 
     outer.onmousedown = () => {
         if (outer.dataset.big == "true") {
-            big.lastElementChild.appendChild(outer.querySelector(".hidden").cloneNode(true));
+            content.appendChild(outer.querySelector(".hidden").cloneNode(true));
+
+            big.dataset.active = "true";
             big.style.display = "flex";
+
+            big.animate({ opacity: [0, 1] }, { duration: 400, easing: "ease", fill: "forwards" });
+            content.animate({ transform: ["translateY(-200%)", "translateY(0%)"] }, { duration: 700, easing: "ease", fill: "forwards" });
 
             document.body.style.overflowY = "hidden";
         } else {
@@ -420,8 +414,6 @@ document.onmousemove = (e) => {
         },
         { duration: 100, fill: "forwards" },
     );
-
-    // zoomBox.style.translate = `${x}px 10%`;
 };
 
 let scale = 1;
@@ -441,8 +433,6 @@ function zoom(el) {
     document.body.style.overflowY = "hidden";
 
     const p = el.getBoundingClientRect();
-
-    // console.log(el.cloneNode(true));
 
     zoomBox.appendChild(el.cloneNode(true));
 
@@ -484,6 +474,7 @@ function unzoom() {
 
     document.body.style.overflowY = "auto";
 
+    zoomout.style.display = "block";
     zoomout.innerHTML = zoomBox.innerHTML;
 
     zoomBox.innerHTML = "";
@@ -500,25 +491,38 @@ function unzoom() {
         },
     );
 
-    setTimeout(() => (zoomout.innerHTML = ""), 550);
+    setTimeout(() => {
+        zoomout.style.display = "none";
+        zoomout.innerHTML = "";
+    }, 550);
+}
+
+function leaveBig() {
+    if (big.dataset.active == "true") {
+        big.dataset.active = "false";
+        big.animate({ opacity: [1, 0] }, { duration: 600, easing: "ease", fill: "forwards" });
+        content.animate({ transform: ["translateY(0%)", "translateY(200%)"] }, { duration: 700, easing: "ease", fill: "forwards" });
+
+        setTimeout(() => {
+            big.style.display = "none";
+            big.lastElementChild.innerHTML = "";
+            document.body.style.overflowY = "auto";
+        }, 600);
+    }
 }
 
 document.onmousedown = unzoom;
 
-function leaveBig() {
-    big.style.display = "none";
-    big.lastElementChild.innerHTML = "";
-    document.body.style.overflowY = "auto";
-}
-
 document.onkeydown = (e) => {
-    if (e.key == "Escape") unzoom();
+    if (e.key == "Escape") {
+        unzoom();
+        leaveBig();
+    }
 };
 
 const carouselSelector = document.getElementById("carousel-selector");
 
 document.onscroll = () => {
-    // console.log(document.documentElement.scrollTop);
     if (document.documentElement.scrollTop > 0) {
         carouselSelector.classList.add("scrolled");
     } else {
@@ -546,9 +550,6 @@ function resize() {
 
     columns = Math.floor(maxWidth / 100);
     rows = Math.floor(maxHeight / 100);
-
-    // console.log(columns);
-    // console.log(rows);
 
     bg.style.setProperty("--columns", columns);
     bg.style.setProperty("--rows", rows);
