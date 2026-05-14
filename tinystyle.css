@@ -290,6 +290,7 @@ body,
     cursor: pointer;
     top: 0px;
     right: 0px;
+z-index: 300;
 }
 
 .leave > svg {
