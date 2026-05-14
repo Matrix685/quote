@@ -1,3 +1,4 @@
+const body = document.getElementById("fake-body"); // because fuck you
 const main = document.getElementById("main");
 const carouselSelection = document.getElementById("carousel-selection");
 const carouselContainer = document.getElementById("carousel-container");
@@ -233,6 +234,12 @@ let quotes = [
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fk5OuQ9OuqbE%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=b86784b91ea788c07148b01867a53a4d8616d1e258cca345edee611cb5f499e9",
                 quote: `"I'm old!" - Gerson Boom`,
             },
+            {
+                id: "jaiden",
+                big: false,
+                image: "https://www.papermag.com/media-library/image.jpg?id=29585887&width=1200&height=800&quality=70&coordinates=58%2C0%2C59%2C0",
+                quote: `"It's scary to think you have it, and it's also scary to think that you don't have it" - JaidenAnimations`,
+            },
         ],
     },
 ];
@@ -354,6 +361,7 @@ outers.forEach((outer, i) => {
             content.animate({ transform: ["translateY(-200%)", "translateY(0%)"] }, { duration: 700, easing: "ease", fill: "forwards" });
 
             document.body.style.overflowY = "hidden";
+            body.style.overflowY = "hidden";
         } else {
             setTimeout(() => zoom(outer));
         }
@@ -431,6 +439,7 @@ zoomBox.onwheel = (e) => {
 
 function zoom(el) {
     document.body.style.overflowY = "hidden";
+    body.style.overflowY = "hidden";
 
     const p = el.getBoundingClientRect();
 
@@ -473,6 +482,7 @@ function unzoom() {
     setTimeout(() => (zoomBox.style.scale = scale), 600);
 
     document.body.style.overflowY = "auto";
+    body.style.overflowY = "auto";
 
     zoomout.style.display = "block";
     zoomout.innerHTML = zoomBox.innerHTML;
@@ -507,6 +517,7 @@ function leaveBig() {
             big.style.display = "none";
             big.lastElementChild.innerHTML = "";
             document.body.style.overflowY = "auto";
+            body.style.overflowY = "auto";
         }, 600);
     }
 }
