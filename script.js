@@ -654,10 +654,11 @@ function selectCarousel(selector, index) {
         let offsetAmount = SMALLSCREEN ? -100 : -400;
         bgOffset = index * offsetAmount;
 
-        if (carouselSelection.scrollWidth > carouselSelector.offsetWidth) {
-            carouselSelector.style.transform = `translateX(${index * (-100 / carouselSelectors.length) + 10}%)`;
+        // console.log(carouselSelector.scrollWidth);
+        if (carouselSelection.clientWidth > window.innerWidth) {
+            carouselSelection.style.transform = `translateX(${Math.min(0, index * (-100 / carouselSelectors.length) + 10)}%)`;
         } else {
-            carouselSelector.style.transform = `translateX(0%)`;
+            carouselSelection.style.transform = `translateX(0%)`;
         }
 
         bg.style.transform = `translateX(${bgOffset}px)`;
