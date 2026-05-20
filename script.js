@@ -124,7 +124,7 @@ let quotes = [
         ],
     },
     {
-        id: "Brooklyn 99",
+        id: "Brooklyn Nine-Nine",
         content: [
             {
                 id: "email",
@@ -287,6 +287,8 @@ let quotes = [
     },
 ];
 
+let SMALLSCREEN = false;
+
 function mix(arr) {
     // console.log("this should show up twice");
     for (let i = arr.length - 1; i > 0; i--) {
@@ -405,7 +407,7 @@ outers.forEach((outer, i) => {
 
             document.body.style.overflowY = "hidden";
             body.style.overflowY = "hidden";
-        } else {
+        } else if (!SMALLSCREEN) {
             setTimeout(() => zoom(outer));
         }
     };
@@ -592,18 +594,25 @@ let carouselsHeight = Array.from(carousels);
 let maxWidth, maxHeight, columns, rows;
 
 function resize() {
+    SMALLSCREEN = window.innerWidth < 500 ? true : false;
+
+    let excessWidth = SMALLSCREEN ? 100 : 400;
+
     carouselsHeight = carouselsHeight.sort((a, b) => b.offsetHeight - a.offsetHeight);
     carouselContainer.style.height = carouselsHeight[0].offsetHeight + "px";
 
     bg.innerHTML = "";
     bg.style.height = Math.max(document.documentElement.offsetHeight, window.innerHeight) + "px";
-    bg.style.width = `calc(100% + ${500 * carousels.length}px)`;
+    bg.style.width = `calc(100% + ${excessWidth * carousels.length}px)`;
 
     maxWidth = bg.offsetWidth;
     maxHeight = bg.offsetHeight;
 
-    columns = Math.floor(maxWidth / 100);
-    rows = Math.floor(maxHeight / 100);
+    let colWidth = SMALLSCREEN ? 70 : 100;
+    let colHeight = SMALLSCREEN ? 70 : 100;
+
+    columns = Math.floor(maxWidth / colWidth);
+    rows = Math.floor(maxHeight / colHeight);
 
     bg.style.setProperty("--columns", columns);
     bg.style.setProperty("--rows", rows);
@@ -637,12 +646,19 @@ function selectCarousel(selector, index) {
         carousels.forEach((n) => {
             if (n.dataset.active == "true") {
                 n.dataset.active = "false";
-                n.style.transform = `translateX(${100 * dir * -1}%)`;
+                n.style.transform = `translateX(${-100 * dir}%)`;
             }
         });
 
         // console.log(dir);
-        bgOffset = index * -500;
+        let offsetAmount = SMALLSCREEN ? -100 : -400;
+        bgOffset = index * offsetAmount;
+
+        if (carouselSelection.scrollWidth > carouselSelector.offsetWidth) {
+            carouselSelector.style.transform = `translateX(${index * (-100 / carouselSelectors.length) + 10}%)`;
+        } else {
+            carouselSelector.style.transform = `translateX(0%)`;
+        }
 
         bg.style.transform = `translateX(${bgOffset}px)`;
 
