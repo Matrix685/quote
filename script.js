@@ -176,6 +176,35 @@ let quotes = [
         ],
     },
     {
+        id: "JaidenAnimations",
+        content: [
+            {
+                id: "adhd",
+                big: false,
+                image: "https://www.papermag.com/media-library/image.jpg?id=29585887&width=1200&height=800&quality=70&coordinates=58%2C0%2C59%2C0",
+                quote: `"It's scary to think you have it, and it's also scary to think that you don't have it" - JaidenAnimations`,
+            },
+            {
+                id: "lie",
+                big: false,
+                image: "https://i.ytimg.com/vi/xs_ok7fF_s4/maxresdefault.jpg",
+                quote: '"Hey! What the heck! You lied to me! For literally no reason!" - JaidenAnimations',
+            },
+            {
+                id: "crime",
+                big: false,
+                image: "https://i.ytimg.com/vi/dk_Q4KPBqXg/maxresdefault.jpg",
+                quote: `"He's not here for kisses. He's here for the opposite of kisses ... which is crime" - JaidenAnimations`,
+            },
+            {
+                id: "hero",
+                big: false,
+                image: "https://i.ytimg.com/vi/jJNgocrAbKA/maxresdefault.jpg",
+                quote: `"Yay! Woohoo! I'm a hero! *burp* Time to take a nap" - JaidenAnimations`,
+            },
+        ],
+    },
+    {
         id: "Miscellaneous",
         content: [
             {
@@ -276,12 +305,6 @@ let quotes = [
                 big: false,
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fk5OuQ9OuqbE%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=b86784b91ea788c07148b01867a53a4d8616d1e258cca345edee611cb5f499e9",
                 quote: `"I'm old!" - Gerson Boom`,
-            },
-            {
-                id: "jaiden",
-                big: false,
-                image: "https://www.papermag.com/media-library/image.jpg?id=29585887&width=1200&height=800&quality=70&coordinates=58%2C0%2C59%2C0",
-                quote: `"It's scary to think you have it, and it's also scary to think that you don't have it" - JaidenAnimations`,
             },
         ],
     },

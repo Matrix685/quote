@@ -351,6 +351,7 @@ body,
 
 .windows > .img,
 .jeremy_crazy > .img,
-.sticky > .img {
+.sticky > .img,
+.hero > .img {
     background-position: center;
 }
