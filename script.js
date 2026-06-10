@@ -257,6 +257,18 @@ let quotes = [
                 image: "https://i.ytimg.com/vi/jJNgocrAbKA/maxresdefault.jpg",
                 quote: `"Yay! Woohoo! I'm a hero! *burp* Time to take a nap" - JaidenAnimations`,
             },
+            {
+                id: "subscription",
+                big: false,
+                image: "https://i.ytimg.com/vi/NBZv0_MImIY/maxresdefault.jpg",
+                quote: `"It's become so common for us to buy products and not even actually own them. and you need to pay money every month just to keep using them. AND THEY'RE BAD" - JaidenAnimations`,
+            },
+            {
+                id: "survive",
+                big: false,
+                image: "https://yt3.googleusercontent.com/9b5DW0WsoUtzke1Q54ARDE26FqU4FXAgjnWKEihmDCgYAu2ZLN8qLhvD1WjQT-lFjDbg43HsHQ",
+                quote: '"That was a free survival hint from your friendly neighbourhood YouTuber, put that one in the back of your pockets" - JaidenAnimations',
+            },
         ],
     },
     {
@@ -325,16 +337,48 @@ let quotes = [
             {
                 id: "yesorno",
                 big: true,
-                image: "https://external-preview.redd.it/U4uhn3jfwGR6XHpuynAbRaoYlTXaRSgFz3UYobezGB8.gif?auto=webp&s=9760fc1d125a105b0cb2d45972b4565e8c11dbb2",
+                image: "https://i.ytimg.com/vi/qfMrLeQUBJk/maxresdefault.jpg",
                 // quote: '"I am the only one out of the loop IT WOULD SEEM" - Brennan Lee Mulligan. "i killed him yeah"',
-                quote: "THIS IS TEMPORARY",
+                quote: '"I am the only one out of the loop, it would seem!" - Brennan Lee Mulligan',
                 script: [
-                    ["Brennanwhatifthis goesdiffline", "I am the only one out of the loop, IT WOULD SEEM!"],
-                    ["", "I am Brennan Lee Mulligan and you shall all TREMBLE BEFORE MY WRATH"],
-                    ["Zac", "Woah, dude"],
-                    ["Ally", "Why do bad things happen to good people? I'm just asking like jeez omg why though i don't get it hey is this long enough i want it to be on multiple lines"],
-                    ["", "so i can see how this would look i dont know if ive written enough but hey"],
-                    ["Lou", "I'm rich fuck you"],
+                    ["Sam", "Yes or no? Brennan?"],
+                    ["Brennan", "I know what's going on here. I know what's going on here. Okay? I do"],
+                    ["Sam", "Do you?"],
+                    ["Brennan", "And if you want me to wander backstage to, spill the beans..."],
+                    ["Sam", "I mean, there's really no need for us to do that because..."],
+                    ["Brennan", "It's the final question right?"],
+                    ["Sam", "... these other two are in the loop, so..."],
+                    ["Brennan", "They're in the loop(!)"],
+                    ["Zac", "Is this the final one?"],
+                    [
+                        "Brennan",
+                        "I am the only one out of the loop, it would seem! And if we check my point total here! I don't need to walk to the front, because I know what it is, it's a big ol' goose egg, gang! It's a fat zero!",
+                    ],
+                    ["", "Hello!"],
+                    ["", "A little late addition to the numerical symbol chart, brought to us from our friends in arabia, little bit of trivia that I happen to know about the history of numbers!"],
+                    ["", "That kind of little tidbit would serve me well in most trivia games, unless it had been RIGGED FROM THE BEGINNING!"],
+                    ["Zac", "Woah, dude."],
+                    ["Sam", "Woah, dude!"],
+                    ["Brennan", "Oooohh!"],
+                    ["", "I've only just begun to pull the thread on this sweater, friends!"],
+                    ["", "You would think that in a game where there are only two possible correct choices, that one would stumble into the right answer every so often, wouldn't you?"],
+                    ["", "In fact, the probability of never guessing right in the full game is a statistical wonder! And yet, here we are!"],
+                    ["", "Introduced at the top of the game as a champion, what do you think that means?"],
+                    ["", "Icarus. Flying too close to the sun, but it seems Daedalus, our little master crafter over here, had some wax wings of his own, didn't he?"],
+                    ["", "He wanted to see his son fall, fall from the sky, oh, how CLOSE to the SUN HE FLEW!"],
+                    ["", "Well, I'm NOT HAVING IT!"],
+                    ["", "I've solved your labyrinth, puzzle master! The Minotaur's escaped, and you're gonna get the horns, buddy!"],
+                    ["Ally", "Okay, are we-"],
+                    ["Zac", "Can I tell you what the thing is?"],
+                    ["Ally", "Did we think we were in on it but actually Brennan's the only one in on it and that was rehearsed?"],
+                    ["Sam", "That was an incredible monologue, Brennan, what is the rule of the game?"],
+                    ["Zac", '<span style="font-size: 0.8vw;">Can we all say it?</span>'],
+                    ["Brennan", "I CANNOT WIN!"],
+                    ["Sam", "That is correct, Brennan! You cannot win the game!"],
+                    ["Brennan", "*roars with fury*"],
+                    ["Ally", "Did we all get crowns?"],
+                    ["Sam", "Uh, we only got two."],
+                    ["Brennan", "GOD DAMN IT!"],
                 ],
             },
             {
@@ -360,6 +404,18 @@ let quotes = [
                 big: false,
                 image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fk5OuQ9OuqbE%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=b86784b91ea788c07148b01867a53a4d8616d1e258cca345edee611cb5f499e9",
                 quote: `"I'm old!" - Gerson Boom`,
+            },
+            {
+                id: "drew_tech",
+                big: false,
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FfH12Mph5ueQ%2Fmaxresdefault.jpg%3Fsqp%3D-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGHIgRCgzMA8%3D%26rs%3DAOn4CLAzgBvwdwAceK7WfWMfGDzUu__d-A&f=1&nofb=1&ipt=9a0368083979d6bc340eaa31c2de4d412d7acba46b971ec19e7ad6f26ccc5bcb",
+                quote: '"Everything is the same thing, and I\'m tired of it" - Drew Gooden',
+            },
+            {
+                id: "drew_skill",
+                big: false,
+                image: "https://i.ytimg.com/vi/Xc4YH0nv_90/maxresdefault.jpg",
+                quote: `"How are ever you going to do something for ten years if you won't even do it for one day?" - Drew Gooden`,
             },
         ],
     },
@@ -424,7 +480,7 @@ function bigQuote(script, outer) {
 
         let name = document.createElement("div");
         name.classList.add("name");
-        name.innerText = line[0];
+        name.innerHTML = line[0];
 
         if (line[0] != "") {
             let colon = document.createElement("span");
@@ -435,7 +491,7 @@ function bigQuote(script, outer) {
 
         let speech = document.createElement("div");
         speech.classList.add("speech");
-        speech.innerText = line[1];
+        speech.innerHTML = line[1];
 
         row.appendChild(name);
         row.appendChild(speech);

@@ -15,6 +15,9 @@
     width: 14vw;
 }
 
-.blm_butthole > .caption {
+.blm_butthole > .caption,
+.subscription > .caption,
+.survive > .caption,
+.drew_skill > .caption {
     font-size: 2.7vw;
 }
