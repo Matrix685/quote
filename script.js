@@ -372,7 +372,7 @@ let quotes = [
                     ["Zac", "Can I tell you what the thing is?"],
                     ["Ally", "Did we think we were in on it but actually Brennan's the only one in on it and that was rehearsed?"],
                     ["Sam", "That was an incredible monologue, Brennan, what is the rule of the game?"],
-                    ["Zac", '<span style="font-size: 0.8vw;">Can we all say it?</span>'],
+                    ["Zac", '<span style="font-size: max(0.8vw, 10px);">Can we all say it?</span>'],
                     ["Brennan", "I CANNOT WIN!"],
                     ["Sam", "That is correct, Brennan! You cannot win the game!"],
                     ["Brennan", "*roars with fury*"],
@@ -397,7 +397,7 @@ let quotes = [
                 id: "dead",
                 big: false,
                 image: "https://i.ytimg.com/vi/E4dETjG6MqY/maxresdefault.jpg",
-                quote: '"Then, why am I dead?!" - Gerard Way',
+                quote: "🎜Then, why am I dead?!🎜- Gerard Way",
             },
             {
                 id: "gerson_old",
