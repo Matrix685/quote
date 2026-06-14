@@ -397,7 +397,7 @@ let quotes = [
                 id: "dead",
                 big: false,
                 image: "https://i.ytimg.com/vi/E4dETjG6MqY/maxresdefault.jpg",
-                quote: "🎜Then, why am I dead?!🎜- Gerard Way",
+                quote: "🎜&nbsp;Then, why am I dead?!&nbsp;🎜- Gerard Way",
             },
             {
                 id: "gerson_old",
@@ -735,6 +735,14 @@ function resize() {
     carouselsHeight = carouselsHeight.sort((a, b) => b.offsetHeight - a.offsetHeight);
     carouselContainer.style.height = carouselsHeight[0].offsetHeight + "px";
 
+    if (carouselSelection.clientWidth > window.innerWidth) {
+        carouselSelection.style.left = "0px";
+        // carouselSelection.style.transform = "translateX(0%)";
+    } else {
+        carouselSelection.style.left = "50%";
+        carouselSelection.style.transform = "translateX(-50%)";
+    }
+
     bg.innerHTML = "";
     bg.style.height = Math.max(document.documentElement.offsetHeight, window.innerHeight) + "px";
     bg.style.width = `calc(100% + ${excessWidth * carousels.length}px)`;
@@ -763,6 +771,7 @@ resize();
 window.onresize = resize;
 
 const carouselSelectors = Array.from(document.querySelectorAll("#carousel-selection > p"));
+const carouselWidth = document.getElementById("carousel-inner-width");
 
 let activeIndex = 0;
 let bgOffset = 0;
@@ -790,9 +799,9 @@ function selectCarousel(selector, index) {
 
         // console.log(carouselSelector.scrollWidth);
         if (carouselSelection.clientWidth > window.innerWidth) {
-            carouselSelection.style.transform = `translateX(${Math.min(0, index * (-100 / carouselSelectors.length) + 10)}%)`;
+            carouselSelection.style.transform = `translateX(calc(${Math.min(0, index * (-100 / (carouselSelectors.length - 1)))}% + ${index * (carouselWidth.clientWidth / (carouselSelectors.length - 1))}px))`;
         } else {
-            carouselSelection.style.transform = `translateX(0%)`;
+            carouselSelection.style.transform = `translateX(-50%)`;
         }
 
         bg.style.transform = `translateX(${bgOffset}px)`;
